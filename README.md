@@ -6,4 +6,8 @@ This is a starting point for **KMM (Kotlin Multiplatform Mobile)** projects desi
 * MVI (Model View Intent)
 * UI layer: Jetpack Compose (Android) and SwiftUI (iOS)
 
+## Android:
 ![Alt Text](demo.gif)
+
+## iOS:
+![Alt Text](demo-ios.gif)
