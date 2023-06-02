@@ -18,7 +18,7 @@ object AppConstants {
         object DummyApi {
 
             const val url = "https://dummyapi.io/data/v1/"
-            const val appId = "6116448b7a91f52f4b01c809"
+            const val appId = "{you-app-id}"
             const val users = "user"
             const val posts = "post"
             const val tags = "tag"
