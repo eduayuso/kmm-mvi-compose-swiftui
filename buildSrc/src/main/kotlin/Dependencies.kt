@@ -18,7 +18,7 @@ object Dependencies {
         val commonTest = listOf(
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.coroutines}",
             "io.ktor:ktor-client-mock:${versions.ktor}",
-            "io.insert-koin:koin-test:${versions.koin}",
+            "io.insert-koin:koin-test:${versions.koinTest}",
             "io.mockk:mockk-common:${versions.mockkCommon}",
             "app.cash.turbine:turbine:${versions.turbine}"
         )
@@ -40,7 +40,7 @@ object Dependencies {
             "test-junit"
         )
 
-        val androidTest = listOf(
+        val androidUnitTest = listOf(
             "junit:junit:4.13.2",
             "io.mockk:mockk:${versions.mockk}",
             "app.cash.turbine:turbine:${versions.turbine}"
@@ -51,12 +51,16 @@ object Dependencies {
         )
     }
 
+    val androidPlatform = listOf(
+        "androidx.compose:compose-bom:${versions.composeBom}"
+    )
+
     val android = listOf(
-        "androidx.compose.ui:ui:${versions.compose}",
-        "androidx.compose.ui:ui-tooling:${versions.compose}",
-        "androidx.compose.ui:ui-tooling-preview:${versions.compose}",
-        "androidx.compose.foundation:foundation:${versions.compose}",
-        "androidx.compose.material:material:${versions.compose}",
+        "androidx.compose.ui:ui",
+        "androidx.compose.ui:ui-tooling",
+        "androidx.compose.ui:ui-tooling-preview",
+        "androidx.compose.foundation:foundation",
+        "androidx.compose.material:material",
         "androidx.compose.material3:material3:${versions.material3}",
         "androidx.activity:activity-compose:${versions.activity}",
         "androidx.navigation:navigation-compose:${versions.navigation}",
