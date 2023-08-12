@@ -1,6 +1,7 @@
 package dev.eduayuso.kmcs.di
 
 import dev.eduayuso.kmcs.AppConstants
+import dev.eduayuso.kmcs.data.LocalProperties
 import dev.eduayuso.kmcs.data.repository.PostsRepository
 import dev.eduayuso.kmcs.data.repository.UsersRepository
 import dev.eduayuso.kmcs.data.source.remote.ApiClient
@@ -44,7 +45,13 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
         )
     }
 
-fun initKoin() = initKoin {}
+fun initKoinFromIOS(localProperties: LocalProperties) = initKoin {
+    modules(
+        module {
+            single { localProperties }
+        }
+    )
+}
 
 val apiModule = module {
 
@@ -72,7 +79,7 @@ val apiModule = module {
             }
         }
     }
-    single { ApiClient(get(), AppConstants.Apis.DummyApi.url) }
+    single { ApiClient(get(), AppConstants.Apis.DummyApi.url, get()) }
 }
 
 val dataSourceModule = module {
