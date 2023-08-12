@@ -1,16 +1,17 @@
 package dev.eduayuso.kmcs.data.source.remote
 
 import dev.eduayuso.kmcs.AppConstants
+import dev.eduayuso.kmcs.data.LocalProperties
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
-import io.ktor.client.utils.EmptyContent.headers
 import io.ktor.http.*
 
 open class ApiClient(
 
     val httpClient: HttpClient,
-    val baseUrl: String
+    val baseUrl: String,
+    val localProperties: LocalProperties
 
 ) {
 
@@ -20,7 +21,7 @@ open class ApiClient(
             headers {
                 append(
                     name = AppConstants.Http.Headers.appId,
-                    value = AppConstants.Apis.DummyApi.appId
+                    value = localProperties.dummyApiKey
                 )
             }
         }.body()
@@ -33,7 +34,7 @@ open class ApiClient(
             headers {
                 append(
                     name = AppConstants.Http.Headers.appId,
-                    value = AppConstants.Apis.DummyApi.appId
+                    value = localProperties.dummyApiKey
                 )
             }
             setBody(body)

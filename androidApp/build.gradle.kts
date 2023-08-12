@@ -1,6 +1,13 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id(Plugins.androidApp)
     kotlin(Plugins.kotlinAndroid)
+}
+
+val properties =  Properties()
+if (rootProject.file("local.properties").exists()) {
+    properties.load(rootProject.file("local.properties").inputStream())
 }
 
 android {
@@ -15,6 +22,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
@@ -27,6 +35,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            buildConfigField("String", "DUMMY_API_KEY", properties.getProperty("dummyapi.key"))
+        }
+        getByName("debug") {
+            buildConfigField("String", "DUMMY_API_KEY", properties.getProperty("dummyapi.key"))
         }
     }
     compileOptions {

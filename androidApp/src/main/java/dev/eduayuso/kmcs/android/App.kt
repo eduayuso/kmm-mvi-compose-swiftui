@@ -1,6 +1,8 @@
 package dev.eduayuso.kmcs.android
 
 import android.app.Application
+import dev.eduayuso.kmcs.android.system.AndroidLocalProperties
+import dev.eduayuso.kmcs.data.LocalProperties
 import dev.eduayuso.kmcs.di.KoinViewModels
 import dev.eduayuso.kmcs.di.initKoin
 import org.koin.android.ext.koin.androidContext
@@ -13,10 +15,10 @@ class App: Application(), KoinComponent {
 
         super.onCreate()
         initKoin {
-            androidContext(this@App)
             modules(
                 module {
                     single { KoinViewModels() }
+                    single<LocalProperties> { AndroidLocalProperties() }
                 }
             )
         }

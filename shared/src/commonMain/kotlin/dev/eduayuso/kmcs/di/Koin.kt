@@ -72,7 +72,7 @@ val apiModule = module {
             }
         }
     }
-    single { ApiClient(get(), AppConstants.Apis.DummyApi.url) }
+    single { ApiClient(get(), AppConstants.Apis.DummyApi.url, get()) }
 }
 
 val dataSourceModule = module {
