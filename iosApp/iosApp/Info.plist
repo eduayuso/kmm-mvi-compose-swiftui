@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DummyApiKey</key>
-	<string>6116448b7a91f52f4b01c809</string>
+	<string>{your app id}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
