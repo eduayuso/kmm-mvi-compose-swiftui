@@ -7,7 +7,7 @@ This is a starting point for **KMM (Kotlin Multiplatform Mobile)** projects desi
 * UI layer: Jetpack Compose (Android) and SwiftUI (iOS)
 
 ## Setup
-* The app use the API https://dummyapi.io/ to fetch the data, you have to indicate the app id of your dummyapi.io account.
+* The app gets data from the API https://dummyapi.io/, so you have to indicate the app id from your dummyapi.io account.
 * For Android app add a property called "dummyapi.key" in local.properties (in project root) with yout dummyapi.io app id.
 * For iOS add a custom property called: "DummyApiKey" in your Info.plist with yout dummyapi.io app id.
 
